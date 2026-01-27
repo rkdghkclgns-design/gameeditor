@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    swcMinify: true,
-    reactStrictMode: false,
+    output: 'export',
+    basePath: '/gameeditor',
+    assetPrefix: '/gameeditor/',
+    trailingSlash: true,
     images: {
-        remotePatterns: [
-            {
-                protocol: 'http',
-                hostname: 'localhost',
-            },
-        ],
+        unoptimized: true,
     },
 }
 
