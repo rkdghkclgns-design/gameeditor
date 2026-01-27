@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "=================================================="
+echo "🚀 PROJECT AETHELGARD: ULTIMATE GDD SYSTEM START"
+echo "=================================================="
+echo "Specifications:"
+echo " - Core: Node.js Stream Architecture"
+echo " - Image: NanoBanana Engine"
+echo " - Audio: Google Music & Whisk"
+echo " - Token: Semantic Compression"
+
+# 권한 부여 및 실행
+chmod +x start
+docker-compose down
+docker-compose up --build

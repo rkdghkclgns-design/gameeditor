@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: aethelgard_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  server:
+    build: ./server
+    container_name: aethelgard_api
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/aethelgard
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - NANOBANANA_API_URL=${NANOBANANA_API_URL}
+      - NANOBANANA_API_KEY=${NANOBANANA_API_KEY}
+      - GOOGLE_AI_API_KEY=${GOOGLE_AI_API_KEY}
+    depends_on:
+      - mongo
+    volumes:
+      - ./server/uploads:/app/uploads
+      - ./server/public:/app/public
+
+  client:
+    build: ./client
+    container_name: aethelgard_ui
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:4000
+      - NEXT_PUBLIC_WS_URL=ws://localhost:4000
+    depends_on:
+      - server
+
+volumes:
+  mongo_data:
