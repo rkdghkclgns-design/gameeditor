@@ -8,7 +8,7 @@ export default function StudioPage() {
     const [activeTab, setActiveTab] = useState<Tab>('story')
 
     return (
-        <div className="min-h-screen flex">
+        <div className="flex h-[calc(100vh-4rem)]">
             {/* Sidebar */}
             <aside className="w-64 bg-[#111] border-r border-white/10 p-4 flex flex-col">
                 <h2 className="text-lg font-semibold mb-6 px-2">📁 프로젝트</h2>
@@ -70,8 +70,8 @@ function TabButton({ active, onClick, icon, label }: {
         <button
             onClick={onClick}
             className={`w-full px-4 py-2.5 rounded-lg text-left flex items-center gap-3 transition-colors ${active
-                    ? 'bg-indigo-600/20 text-indigo-400 border border-indigo-500/30'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                ? 'bg-indigo-600/20 text-indigo-400 border border-indigo-500/30'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
         >
             <span>{icon}</span>

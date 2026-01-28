@@ -4,10 +4,10 @@ export default function Home() {
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="relative py-32 px-6">
-                <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-transparent to-transparent" />
-                <div className="max-w-4xl mx-auto text-center relative">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">
+            <section className="relative py-32 px-6 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-transparent to-transparent animate-pulse" />
+                <div className="max-w-4xl mx-auto text-center relative animate-float">
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent drop-shadow-lg">
                         Aethelgard
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-400 mb-8">

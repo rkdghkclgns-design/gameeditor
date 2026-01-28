@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function ControlPage() {
     return (
         <div className="min-h-screen py-12 px-6">
@@ -79,11 +81,11 @@ function ActivityItem({ action, target, time }: { action: string; target: string
 
 function QuickActionButton({ label, href }: { label: string; href: string }) {
     return (
-        <a
+        <Link
             href={href}
-            className="p-4 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-center hover:bg-indigo-600/30 transition-colors"
+            className="p-4 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-center hover:bg-indigo-600/30 transition-colors block"
         >
             {label}
-        </a>
+        </Link>
     )
 }
